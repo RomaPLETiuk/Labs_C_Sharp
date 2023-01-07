@@ -1,0 +1,15 @@
+C:\Users\user\source\repos\Cipher\Cipher\bin\Debug\Cipher.exe.config
+C:\Users\user\source\repos\Cipher\Cipher\bin\Debug\Cipher.exe
+C:\Users\user\source\repos\Cipher\Cipher\bin\Debug\Cipher.pdb
+C:\Users\user\source\repos\Cipher\Cipher\obj\Debug\Cipher.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\Cipher\Cipher\obj\Debug\MainWindow.g.cs
+C:\Users\user\source\repos\Cipher\Cipher\obj\Debug\App.g.cs
+C:\Users\user\source\repos\Cipher\Cipher\obj\Debug\Cipher_MarkupCompile.cache
+C:\Users\user\source\repos\Cipher\Cipher\obj\Debug\Cipher_MarkupCompile.lref
+C:\Users\user\source\repos\Cipher\Cipher\obj\Debug\MainWindow.baml
+C:\Users\user\source\repos\Cipher\Cipher\obj\Debug\Cipher.g.resources
+C:\Users\user\source\repos\Cipher\Cipher\obj\Debug\Cipher.Properties.Resources.resources
+C:\Users\user\source\repos\Cipher\Cipher\obj\Debug\Cipher.csproj.GenerateResource.cache
+C:\Users\user\source\repos\Cipher\Cipher\obj\Debug\Cipher.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Cipher\Cipher\obj\Debug\Cipher.exe
+C:\Users\user\source\repos\Cipher\Cipher\obj\Debug\Cipher.pdb
