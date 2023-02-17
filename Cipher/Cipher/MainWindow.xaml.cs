@@ -27,12 +27,12 @@ namespace Cipher
 
         public class CaesarCipher
         {
-            //символы русской азбуки
-            const string alfabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+            
+            const string alfabet = "АБВГДЕЄЖЗИЙКЇЛМНОПРСТУФХЦЧШЩЬЮЯ";
 
             private string CodeEncode(string text, int k)
             {
-                //добавляем в алфавит маленькие буквы
+                
                 var fullAlfabet = alfabet + alfabet.ToLower();
                 var letterQty = fullAlfabet.Length;
                 var retVal = "";
@@ -42,7 +42,7 @@ namespace Cipher
                     var index = fullAlfabet.IndexOf(c);
                     if (index < 0)
                     {
-                        //если символ не найден, то добавляем его в неизменном виде
+                       
                         retVal += c.ToString();
                     }
                     else
@@ -55,11 +55,11 @@ namespace Cipher
                 return retVal;
             }
 
-            //шифрование текста
+           
             public string Encrypt(string plainMessage, int key)
                 => CodeEncode(plainMessage, key);
 
-            //дешифрование текста
+            
             public string Decrypt(string encryptedMessage, int key)
                 => CodeEncode(encryptedMessage, -key);
         }
