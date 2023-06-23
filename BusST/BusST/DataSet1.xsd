@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BusStationConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BusStationConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BusST.Properties.Settings.GlobalReference.Default.BusStationConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_TimetableTableAdapter" GeneratorDataComponentClassName="vw_TimetableTableAdapter" Name="vw_Timetable" UserDataComponentName="vw_TimetableTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BusStationConnectionString (Settings)" DbObjectName="BusStation.dbo.vw_Timetable" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Destination, Departure_Time, Arrival_Time FROM dbo.vw_Timetable</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Destination" DataSetColumn="Destination" />
+              <Mapping SourceColumn="Departure_Time" DataSetColumn="Departure_Time" />
+              <Mapping SourceColumn="Arrival_Time" DataSetColumn="Arrival_Time" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_Timetable" msprop:Generator_RowEvHandlerName="vw_TimetableRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_TimetableRowDeleted" msprop:Generator_RowDeletingName="vw_TimetableRowDeleting" msprop:Generator_RowEvArgName="vw_TimetableRowChangeEvent" msprop:Generator_TablePropName="vw_Timetable" msprop:Generator_RowChangedName="vw_TimetableRowChanged" msprop:Generator_RowChangingName="vw_TimetableRowChanging" msprop:Generator_TableClassName="vw_TimetableDataTable" msprop:Generator_RowClassName="vw_TimetableRow" msprop:Generator_TableVarName="tablevw_Timetable" msprop:Generator_UserTableName="vw_Timetable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Destination" msprop:Generator_ColumnPropNameInRow="Destination" msprop:Generator_ColumnPropNameInTable="DestinationColumn" msprop:Generator_ColumnVarNameInTable="columnDestination" msprop:Generator_UserColumnName="Destination" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Departure_Time" msprop:Generator_ColumnPropNameInRow="Departure_Time" msprop:Generator_ColumnPropNameInTable="Departure_TimeColumn" msprop:Generator_ColumnVarNameInTable="columnDeparture_Time" msprop:Generator_UserColumnName="Departure_Time" type="xs:duration" minOccurs="0" />
+              <xs:element name="Arrival_Time" msprop:Generator_ColumnPropNameInRow="Arrival_Time" msprop:Generator_ColumnPropNameInTable="Arrival_TimeColumn" msprop:Generator_ColumnVarNameInTable="columnArrival_Time" msprop:Generator_UserColumnName="Arrival_Time" type="xs:duration" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

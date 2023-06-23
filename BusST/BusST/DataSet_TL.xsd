@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_TL" targetNamespace="http://tempuri.org/DataSet_TL.xsd" xmlns:mstns="http://tempuri.org/DataSet_TL.xsd" xmlns="http://tempuri.org/DataSet_TL.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BusStationConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BusStationConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BusST.Properties.Settings.GlobalReference.Default.BusStationConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_Transport_ListTableAdapter" GeneratorDataComponentClassName="vw_Transport_ListTableAdapter" Name="vw_Transport_List" UserDataComponentName="vw_Transport_ListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BusStationConnectionString (Settings)" DbObjectName="BusStation.dbo.vw_Transport_List" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Transport_List_Num, Date_, Number, Full_Name, Route_Number, Departure_Time, Arrival_Time FROM dbo.vw_Transport_List</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Transport_List_Num" DataSetColumn="Transport_List_Num" />
+              <Mapping SourceColumn="Date_" DataSetColumn="Date_" />
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="Full_Name" DataSetColumn="Full_Name" />
+              <Mapping SourceColumn="Route_Number" DataSetColumn="Route_Number" />
+              <Mapping SourceColumn="Departure_Time" DataSetColumn="Departure_Time" />
+              <Mapping SourceColumn="Arrival_Time" DataSetColumn="Arrival_Time" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_TL" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet_TL" msprop:Generator_DataSetName="DataSet_TL">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_Transport_List" msprop:Generator_RowEvHandlerName="vw_Transport_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_Transport_ListRowDeleted" msprop:Generator_RowDeletingName="vw_Transport_ListRowDeleting" msprop:Generator_RowEvArgName="vw_Transport_ListRowChangeEvent" msprop:Generator_TablePropName="vw_Transport_List" msprop:Generator_RowChangedName="vw_Transport_ListRowChanged" msprop:Generator_RowChangingName="vw_Transport_ListRowChanging" msprop:Generator_TableClassName="vw_Transport_ListDataTable" msprop:Generator_RowClassName="vw_Transport_ListRow" msprop:Generator_TableVarName="tablevw_Transport_List" msprop:Generator_UserTableName="vw_Transport_List">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Transport_List_Num" msprop:Generator_ColumnPropNameInRow="Transport_List_Num" msprop:Generator_ColumnPropNameInTable="Transport_List_NumColumn" msprop:Generator_ColumnVarNameInTable="columnTransport_List_Num" msprop:Generator_UserColumnName="Transport_List_Num">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Date_" msprop:Generator_ColumnPropNameInRow="Date_" msprop:Generator_ColumnPropNameInTable="Date_Column" msprop:Generator_ColumnVarNameInTable="columnDate_" msprop:Generator_UserColumnName="Date_" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Number" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_UserColumnName="Number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Full_Name" msprop:Generator_ColumnPropNameInRow="Full_Name" msprop:Generator_ColumnPropNameInTable="Full_NameColumn" msprop:Generator_ColumnVarNameInTable="columnFull_Name" msprop:Generator_UserColumnName="Full_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Route_Number" msprop:Generator_ColumnPropNameInRow="Route_Number" msprop:Generator_ColumnPropNameInTable="Route_NumberColumn" msprop:Generator_ColumnVarNameInTable="columnRoute_Number" msprop:Generator_UserColumnName="Route_Number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Departure_Time" msprop:Generator_ColumnPropNameInRow="Departure_Time" msprop:Generator_ColumnPropNameInTable="Departure_TimeColumn" msprop:Generator_ColumnVarNameInTable="columnDeparture_Time" msprop:Generator_UserColumnName="Departure_Time" type="xs:duration" minOccurs="0" />
+              <xs:element name="Arrival_Time" msprop:Generator_ColumnPropNameInRow="Arrival_Time" msprop:Generator_ColumnPropNameInTable="Arrival_TimeColumn" msprop:Generator_ColumnVarNameInTable="columnArrival_Time" msprop:Generator_UserColumnName="Arrival_Time" type="xs:duration" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vw_Transport_List" />
+      <xs:field xpath="mstns:Transport_List_Num" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

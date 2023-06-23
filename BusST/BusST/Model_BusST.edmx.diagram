@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="102f1fd1d64b47f2bcabfa645df85cdd" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="BusStationModel.Bus" Width="1.5" PointX="9.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusStationModel.Direction" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusStationModel.District" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusStationModel.Driver" Width="1.5" PointX="9.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusStationModel.Region" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusStationModel.Route_" Width="1.5" PointX="7.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusStationModel.Stop_" Width="1.5" PointX="9.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusStationModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusStationModel.Transport_List" Width="1.5" PointX="12" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusStationModel.Trip" Width="1.5" PointX="9.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusStationModel.vw_Transport_List" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BusStationModel.vw_Trips" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="BusStationModel.FK__Transport__Bus_C__0D44F85C" ManuallyRouted="false" />
+        <AssociationConnector Association="BusStationModel.FK__Direction__Distr__7EF6D905" ManuallyRouted="false" />
+        <AssociationConnector Association="BusStationModel.FK__Route___Directio__01D345B0" ManuallyRouted="false" />
+        <AssociationConnector Association="BusStationModel.FK__District__Region__7C1A6C5A" ManuallyRouted="false" />
+        <AssociationConnector Association="BusStationModel.FK__Transport__Drive__0E391C95" ManuallyRouted="false" />
+        <AssociationConnector Association="BusStationModel.FK__Trip__Route_Code__0A688BB1" ManuallyRouted="false" />
+        <AssociationConnector Association="BusStationModel.FK__Transport__Trip___0F2D40CE" ManuallyRouted="false" />
+        <AssociationConnector Association="BusStationModel.Stop_Route" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
