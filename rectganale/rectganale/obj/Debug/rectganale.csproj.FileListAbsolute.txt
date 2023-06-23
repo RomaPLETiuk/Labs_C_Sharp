@@ -1,0 +1,16 @@
+C:\Users\user\source\repos\rectganale\rectganale\bin\Debug\rectganale.exe.config
+C:\Users\user\source\repos\rectganale\rectganale\bin\Debug\rectganale.exe
+C:\Users\user\source\repos\rectganale\rectganale\bin\Debug\rectganale.pdb
+C:\Users\user\source\repos\rectganale\rectganale\obj\Debug\rectganale.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\rectganale\rectganale\obj\Debug\rectganale.csproj.SuggestedBindingRedirects.cache
+C:\Users\user\source\repos\rectganale\rectganale\obj\Debug\MainWindow.g.cs
+C:\Users\user\source\repos\rectganale\rectganale\obj\Debug\App.g.cs
+C:\Users\user\source\repos\rectganale\rectganale\obj\Debug\rectganale_MarkupCompile.cache
+C:\Users\user\source\repos\rectganale\rectganale\obj\Debug\rectganale_MarkupCompile.lref
+C:\Users\user\source\repos\rectganale\rectganale\obj\Debug\MainWindow.baml
+C:\Users\user\source\repos\rectganale\rectganale\obj\Debug\rectganale.g.resources
+C:\Users\user\source\repos\rectganale\rectganale\obj\Debug\rectganale.Properties.Resources.resources
+C:\Users\user\source\repos\rectganale\rectganale\obj\Debug\rectganale.csproj.GenerateResource.cache
+C:\Users\user\source\repos\rectganale\rectganale\obj\Debug\rectganale.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\rectganale\rectganale\obj\Debug\rectganale.exe
+C:\Users\user\source\repos\rectganale\rectganale\obj\Debug\rectganale.pdb
