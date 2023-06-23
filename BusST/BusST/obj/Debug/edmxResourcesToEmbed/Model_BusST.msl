@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище BusStationModelContainer" CdmEntityContainer="BusStationEntities">
+    <EntitySetMapping Name="Bus">
+      <EntityTypeMapping TypeName="BusStationModel.Bus">
+        <MappingFragment StoreEntitySet="Bus">
+          <ScalarProperty Name="Bus_Code" ColumnName="Bus_Code" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="License_Plate_Num" ColumnName="License_Plate_Num" />
+          <ScalarProperty Name="Year_Of_Manufacture" ColumnName="Year_Of_Manufacture" />
+          <ScalarProperty Name="Number_of_seats" ColumnName="Number_of_seats" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Direction">
+      <EntityTypeMapping TypeName="BusStationModel.Direction">
+        <MappingFragment StoreEntitySet="Direction">
+          <ScalarProperty Name="Direction_Code" ColumnName="Direction_Code" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="District_Code" ColumnName="District_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="District">
+      <EntityTypeMapping TypeName="BusStationModel.District">
+        <MappingFragment StoreEntitySet="District">
+          <ScalarProperty Name="District_Code" ColumnName="District_Code" />
+          <ScalarProperty Name="Region_Code" ColumnName="Region_Code" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Driver">
+      <EntityTypeMapping TypeName="BusStationModel.Driver">
+        <MappingFragment StoreEntitySet="Driver">
+          <ScalarProperty Name="Driver_Code" ColumnName="Driver_Code" />
+          <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+          <ScalarProperty Name="Date_Of_Birth" ColumnName="Date_Of_Birth" />
+          <ScalarProperty Name="Address_" ColumnName="Address_" />
+          <ScalarProperty Name="Driver_License_Num" ColumnName="Driver_License_Num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Region">
+      <EntityTypeMapping TypeName="BusStationModel.Region">
+        <MappingFragment StoreEntitySet="Region">
+          <ScalarProperty Name="Region_Code" ColumnName="Region_Code" />
+          <ScalarProperty Name="Region_Name" ColumnName="Region_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Route_">
+      <EntityTypeMapping TypeName="BusStationModel.Route_">
+        <MappingFragment StoreEntitySet="Route_">
+          <ScalarProperty Name="Route_Code" ColumnName="Route_Code" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Direction_Code" ColumnName="Direction_Code" />
+          <ScalarProperty Name="Route_Number" ColumnName="Route_Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stop_">
+      <EntityTypeMapping TypeName="BusStationModel.Stop_">
+        <MappingFragment StoreEntitySet="Stop_">
+          <ScalarProperty Name="Stop_Code" ColumnName="Stop_Code" />
+          <ScalarProperty Name="Stop_Name" ColumnName="Stop_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="BusStationModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transport_List">
+      <EntityTypeMapping TypeName="BusStationModel.Transport_List">
+        <MappingFragment StoreEntitySet="Transport_List">
+          <ScalarProperty Name="Transport_List_Num" ColumnName="Transport_List_Num" />
+          <ScalarProperty Name="Date_" ColumnName="Date_" />
+          <ScalarProperty Name="Bus_Code" ColumnName="Bus_Code" />
+          <ScalarProperty Name="Driver_Code" ColumnName="Driver_Code" />
+          <ScalarProperty Name="Trip_Code" ColumnName="Trip_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trip">
+      <EntityTypeMapping TypeName="BusStationModel.Trip">
+        <MappingFragment StoreEntitySet="Trip">
+          <ScalarProperty Name="Trip_Code" ColumnName="Trip_Code" />
+          <ScalarProperty Name="Route_Code" ColumnName="Route_Code" />
+          <ScalarProperty Name="Departure_Time" ColumnName="Departure_Time" />
+          <ScalarProperty Name="Arrival_Time" ColumnName="Arrival_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_Transport_List">
+      <EntityTypeMapping TypeName="BusStationModel.vw_Transport_List">
+        <MappingFragment StoreEntitySet="vw_Transport_List">
+          <ScalarProperty Name="Transport_List_Num" ColumnName="Transport_List_Num" />
+          <ScalarProperty Name="Date_" ColumnName="Date_" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+          <ScalarProperty Name="Route_Number" ColumnName="Route_Number" />
+          <ScalarProperty Name="Departure_Time" ColumnName="Departure_Time" />
+          <ScalarProperty Name="Arrival_Time" ColumnName="Arrival_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_Trips">
+      <EntityTypeMapping TypeName="BusStationModel.vw_Trips">
+        <MappingFragment StoreEntitySet="vw_Trips">
+          <ScalarProperty Name="Trip_Code" ColumnName="Trip_Code" />
+          <ScalarProperty Name="Departure_Time" ColumnName="Departure_Time" />
+          <ScalarProperty Name="Arrival_Time" ColumnName="Arrival_Time" />
+          <ScalarProperty Name="Route_Code" ColumnName="Route_Code" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Stop_Route" TypeName="BusStationModel.Stop_Route" StoreEntitySet="Stop_Route">
+      <EndProperty Name="Route_">
+        <ScalarProperty Name="Route_Code" ColumnName="Route_Code" />
+      </EndProperty>
+      <EndProperty Name="Stop_">
+        <ScalarProperty Name="Stop_Code" ColumnName="Stop_Code" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="AddBus" FunctionName="Хранилище BusStationModel.AddBus" />
+    <FunctionImportMapping FunctionImportName="AddDirection" FunctionName="Хранилище BusStationModel.AddDirection" />
+    <FunctionImportMapping FunctionImportName="AddDriver" FunctionName="Хранилище BusStationModel.AddDriver" />
+    <FunctionImportMapping FunctionImportName="AddRoute_" FunctionName="Хранилище BusStationModel.AddRoute_" />
+    <FunctionImportMapping FunctionImportName="AddStop" FunctionName="Хранилище BusStationModel.AddStop" />
+    <FunctionImportMapping FunctionImportName="AddStop_Route" FunctionName="Хранилище BusStationModel.AddStop_Route" />
+    <FunctionImportMapping FunctionImportName="AddTransportList" FunctionName="Хранилище BusStationModel.AddTransportList" />
+    <FunctionImportMapping FunctionImportName="AddTrip" FunctionName="Хранилище BusStationModel.AddTrip" />
+    <FunctionImportMapping FunctionImportName="GetDriversByDate" FunctionName="Хранилище BusStationModel.GetDriversByDate" />
+    <FunctionImportMapping FunctionImportName="GetRouteDistance" FunctionName="Хранилище BusStationModel.GetRouteDistance" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище BusStationModel.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище BusStationModel.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище BusStationModel.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище BusStationModel.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BusStationModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище BusStationModel.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BusStationModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище BusStationModel.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище BusStationModel.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

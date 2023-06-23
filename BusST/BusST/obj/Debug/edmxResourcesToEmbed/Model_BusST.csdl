@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BusStationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bus">
+    <Key>
+      <PropertyRef Name="Bus_Code" />
+    </Key>
+    <Property Name="Bus_Code" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Model" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="License_Plate_Num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Year_Of_Manufacture" Type="Int32" />
+    <Property Name="Number_of_seats" Type="Int32" />
+    <NavigationProperty Name="Transport_List" Relationship="Self.FK__Transport__Bus_C__0D44F85C" FromRole="Bus" ToRole="Transport_List" />
+  </EntityType>
+  <EntityType Name="Direction">
+    <Key>
+      <PropertyRef Name="Direction_Code" />
+    </Key>
+    <Property Name="Direction_Code" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Destination" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="District_Code" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="District" Relationship="Self.FK__Direction__Distr__7EF6D905" FromRole="Direction" ToRole="District" />
+    <NavigationProperty Name="Route_" Relationship="Self.FK__Route___Directio__01D345B0" FromRole="Direction" ToRole="Route_" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="District_Code" />
+    </Key>
+    <Property Name="District_Code" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Region_Code" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="District_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Direction" Relationship="Self.FK__Direction__Distr__7EF6D905" FromRole="District" ToRole="Direction" />
+    <NavigationProperty Name="Region" Relationship="Self.FK__District__Region__7C1A6C5A" FromRole="District" ToRole="Region" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="Driver_Code" />
+    </Key>
+    <Property Name="Driver_Code" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Full_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Date_Of_Birth" Type="DateTime" Precision="0" />
+    <Property Name="Address_" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Driver_License_Num" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Transport_List" Relationship="Self.FK__Transport__Drive__0E391C95" FromRole="Driver" ToRole="Transport_List" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="Region_Code" />
+    </Key>
+    <Property Name="Region_Code" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Region_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="District" Relationship="Self.FK__District__Region__7C1A6C5A" FromRole="Region" ToRole="District" />
+  </EntityType>
+  <EntityType Name="Route_">
+    <Key>
+      <PropertyRef Name="Route_Code" />
+    </Key>
+    <Property Name="Route_Code" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Distance" Type="Int32" />
+    <Property Name="Direction_Code" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="Route_Number" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Direction" Relationship="Self.FK__Route___Directio__01D345B0" FromRole="Route_" ToRole="Direction" />
+    <NavigationProperty Name="Trip" Relationship="Self.FK__Trip__Route_Code__0A688BB1" FromRole="Route_" ToRole="Trip" />
+    <NavigationProperty Name="Stop_" Relationship="Self.Stop_Route" FromRole="Route_" ToRole="Stop_" />
+  </EntityType>
+  <EntityType Name="Stop_">
+    <Key>
+      <PropertyRef Name="Stop_Code" />
+    </Key>
+    <Property Name="Stop_Code" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Stop_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Route_" Relationship="Self.Stop_Route" FromRole="Stop_" ToRole="Route_" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Transport_List">
+    <Key>
+      <PropertyRef Name="Transport_List_Num" />
+    </Key>
+    <Property Name="Transport_List_Num" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Date_" Type="DateTime" Precision="0" />
+    <Property Name="Bus_Code" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="Driver_Code" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Trip_Code" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Bus" Relationship="Self.FK__Transport__Bus_C__0D44F85C" FromRole="Transport_List" ToRole="Bus" />
+    <NavigationProperty Name="Driver" Relationship="Self.FK__Transport__Drive__0E391C95" FromRole="Transport_List" ToRole="Driver" />
+    <NavigationProperty Name="Trip" Relationship="Self.FK__Transport__Trip___0F2D40CE" FromRole="Transport_List" ToRole="Trip" />
+  </EntityType>
+  <EntityType Name="Trip">
+    <Key>
+      <PropertyRef Name="Trip_Code" />
+    </Key>
+    <Property Name="Trip_Code" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Route_Code" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="Departure_Time" Type="Time" Precision="7" />
+    <Property Name="Arrival_Time" Type="Time" Precision="7" />
+    <NavigationProperty Name="Route_" Relationship="Self.FK__Trip__Route_Code__0A688BB1" FromRole="Trip" ToRole="Route_" />
+    <NavigationProperty Name="Transport_List" Relationship="Self.FK__Transport__Trip___0F2D40CE" FromRole="Trip" ToRole="Transport_List" />
+  </EntityType>
+  <EntityType Name="vw_Transport_List">
+    <Key>
+      <PropertyRef Name="Transport_List_Num" />
+    </Key>
+    <Property Name="Transport_List_Num" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Date_" Type="DateTime" Precision="0" />
+    <Property Name="Number" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Full_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Route_Number" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Departure_Time" Type="Time" Precision="7" />
+    <Property Name="Arrival_Time" Type="Time" Precision="7" />
+  </EntityType>
+  <EntityType Name="vw_Trips">
+    <Key>
+      <PropertyRef Name="Trip_Code" />
+      <PropertyRef Name="Route_Code" />
+    </Key>
+    <Property Name="Trip_Code" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Departure_Time" Type="Time" Precision="7" />
+    <Property Name="Arrival_Time" Type="Time" Precision="7" />
+    <Property Name="Route_Code" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Destination" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__Transport__Bus_C__0D44F85C">
+    <End Role="Bus" Type="Self.Bus" Multiplicity="0..1" />
+    <End Role="Transport_List" Type="Self.Transport_List" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bus">
+        <PropertyRef Name="Bus_Code" />
+      </Principal>
+      <Dependent Role="Transport_List">
+        <PropertyRef Name="Bus_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Direction__Distr__7EF6D905">
+    <End Role="District" Type="Self.District" Multiplicity="0..1" />
+    <End Role="Direction" Type="Self.Direction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="District_Code" />
+      </Principal>
+      <Dependent Role="Direction">
+        <PropertyRef Name="District_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Route___Directio__01D345B0">
+    <End Role="Direction" Type="Self.Direction" Multiplicity="0..1" />
+    <End Role="Route_" Type="Self.Route_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Direction">
+        <PropertyRef Name="Direction_Code" />
+      </Principal>
+      <Dependent Role="Route_">
+        <PropertyRef Name="Direction_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__District__Region__7C1A6C5A">
+    <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+    <End Role="District" Type="Self.District" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Region">
+        <PropertyRef Name="Region_Code" />
+      </Principal>
+      <Dependent Role="District">
+        <PropertyRef Name="Region_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transport__Drive__0E391C95">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="Transport_List" Type="Self.Transport_List" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="Driver_Code" />
+      </Principal>
+      <Dependent Role="Transport_List">
+        <PropertyRef Name="Driver_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Trip__Route_Code__0A688BB1">
+    <End Role="Route_" Type="Self.Route_" Multiplicity="0..1" />
+    <End Role="Trip" Type="Self.Trip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Route_">
+        <PropertyRef Name="Route_Code" />
+      </Principal>
+      <Dependent Role="Trip">
+        <PropertyRef Name="Route_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transport__Trip___0F2D40CE">
+    <End Role="Trip" Type="Self.Trip" Multiplicity="0..1" />
+    <End Role="Transport_List" Type="Self.Transport_List" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trip">
+        <PropertyRef Name="Trip_Code" />
+      </Principal>
+      <Dependent Role="Transport_List">
+        <PropertyRef Name="Trip_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Stop_Route">
+    <End Role="Route_" Type="Self.Route_" Multiplicity="*" />
+    <End Role="Stop_" Type="Self.Stop_" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="BusStationEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bus" EntityType="Self.Bus" />
+    <EntitySet Name="Direction" EntityType="Self.Direction" />
+    <EntitySet Name="District" EntityType="Self.District" />
+    <EntitySet Name="Driver" EntityType="Self.Driver" />
+    <EntitySet Name="Region" EntityType="Self.Region" />
+    <EntitySet Name="Route_" EntityType="Self.Route_" />
+    <EntitySet Name="Stop_" EntityType="Self.Stop_" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Transport_List" EntityType="Self.Transport_List" />
+    <EntitySet Name="Trip" EntityType="Self.Trip" />
+    <EntitySet Name="vw_Transport_List" EntityType="Self.vw_Transport_List" />
+    <EntitySet Name="vw_Trips" EntityType="Self.vw_Trips" />
+    <AssociationSet Name="FK__Transport__Bus_C__0D44F85C" Association="Self.FK__Transport__Bus_C__0D44F85C">
+      <End Role="Bus" EntitySet="Bus" />
+      <End Role="Transport_List" EntitySet="Transport_List" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Direction__Distr__7EF6D905" Association="Self.FK__Direction__Distr__7EF6D905">
+      <End Role="District" EntitySet="District" />
+      <End Role="Direction" EntitySet="Direction" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Route___Directio__01D345B0" Association="Self.FK__Route___Directio__01D345B0">
+      <End Role="Direction" EntitySet="Direction" />
+      <End Role="Route_" EntitySet="Route_" />
+    </AssociationSet>
+    <AssociationSet Name="FK__District__Region__7C1A6C5A" Association="Self.FK__District__Region__7C1A6C5A">
+      <End Role="Region" EntitySet="Region" />
+      <End Role="District" EntitySet="District" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transport__Drive__0E391C95" Association="Self.FK__Transport__Drive__0E391C95">
+      <End Role="Driver" EntitySet="Driver" />
+      <End Role="Transport_List" EntitySet="Transport_List" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Trip__Route_Code__0A688BB1" Association="Self.FK__Trip__Route_Code__0A688BB1">
+      <End Role="Route_" EntitySet="Route_" />
+      <End Role="Trip" EntitySet="Trip" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transport__Trip___0F2D40CE" Association="Self.FK__Transport__Trip___0F2D40CE">
+      <End Role="Trip" EntitySet="Trip" />
+      <End Role="Transport_List" EntitySet="Transport_List" />
+    </AssociationSet>
+    <AssociationSet Name="Stop_Route" Association="Self.Stop_Route">
+      <End Role="Route_" EntitySet="Route_" />
+      <End Role="Stop_" EntitySet="Stop_" />
+    </AssociationSet>
+    <FunctionImport Name="AddBus">
+      <Parameter Name="Bus_Code" Mode="In" Type="String" />
+      <Parameter Name="Number" Mode="In" Type="String" />
+      <Parameter Name="Model" Mode="In" Type="String" />
+      <Parameter Name="License_Plate_Num" Mode="In" Type="String" />
+      <Parameter Name="Year_Of_Manufacture" Mode="In" Type="Int32" />
+      <Parameter Name="Number_of_seats" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddDirection">
+      <Parameter Name="Direction_Code" Mode="In" Type="String" />
+      <Parameter Name="Destination" Mode="In" Type="String" />
+      <Parameter Name="District_Code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddDriver">
+      <Parameter Name="Driver_Code" Mode="In" Type="String" />
+      <Parameter Name="Full_Name" Mode="In" Type="String" />
+      <Parameter Name="Date_Of_Birth" Mode="In" Type="DateTime" />
+      <Parameter Name="Address_" Mode="In" Type="String" />
+      <Parameter Name="Driver_License_Num" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddRoute_">
+      <Parameter Name="Route_Code" Mode="In" Type="String" />
+      <Parameter Name="Distance" Mode="In" Type="Int32" />
+      <Parameter Name="Direction_Code" Mode="In" Type="String" />
+      <Parameter Name="Route_Number" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddStop">
+      <Parameter Name="Stop_Code" Mode="In" Type="String" />
+      <Parameter Name="Stop_Name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddStop_Route">
+      <Parameter Name="Stop_Code" Mode="In" Type="String" />
+      <Parameter Name="Route_Code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddTransportList">
+      <Parameter Name="Transport_List_Num" Mode="In" Type="String" />
+      <Parameter Name="Date_" Mode="In" Type="DateTime" />
+      <Parameter Name="Bus_Code" Mode="In" Type="String" />
+      <Parameter Name="Driver_Code" Mode="In" Type="String" />
+      <Parameter Name="Trip_Code" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddTrip">
+      <Parameter Name="Trip_Code" Mode="In" Type="String" />
+      <Parameter Name="Route_Code" Mode="In" Type="String" />
+      <Parameter Name="Departure_Time" Mode="In" Type="Time" />
+      <Parameter Name="Arrival_Time" Mode="In" Type="Time" />
+    </FunctionImport>
+    <FunctionImport Name="GetDriversByDate" ReturnType="Collection(String)">
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetRouteDistance">
+      <Parameter Name="Route_Code" Mode="In" Type="String" />
+      <Parameter Name="Distance" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(BusStationModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(BusStationModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>
